@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://zjarci.github.io/"/>
   <updated>2018-10-13T13:56:41.840Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://zjarci.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/10/13/hello-world/"/>
-    <id>http://yoursite.com/2018/10/13/hello-world/</id>
+    <link href="https://zjarci.github.io/2018/10/13/hello-world/"/>
+    <id>https://zjarci.github.io/2018/10/13/hello-world/</id>
     <published>2018-10-13T13:56:41.839Z</published>
     <updated>2018-10-13T13:56:41.840Z</updated>
     
