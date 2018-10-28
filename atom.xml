@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zjarci.github.io/"/>
-  <updated>2018-10-18T14:00:37.735Z</updated>
+  <updated>2018-10-28T03:51:05.720Z</updated>
   <id>https://zjarci.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>yum安装本地rpm包</title>
+    <link href="https://zjarci.github.io/2018/10/28/yum%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0rpm%E5%8C%85/"/>
+    <id>https://zjarci.github.io/2018/10/28/yum安装本地rpm包/</id>
+    <published>2018-10-28T03:51:02.000Z</published>
+    <updated>2018-10-28T03:51:05.720Z</updated>
+    
+    <content type="html"><![CDATA[<p>yum localinstall ./google-chrome-stable_current_x86_64.rpm</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;yum localinstall ./google-chrome-stable_current_x86_64.rpm&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Untitled</title>
