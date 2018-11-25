@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zjarci.github.io/"/>
-  <updated>2018-10-28T03:51:05.720Z</updated>
+  <updated>2018-11-25T11:08:52.411Z</updated>
   <id>https://zjarci.github.io/</id>
   
   <author>
@@ -17,10 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>OpenOCD SWD调试stm32f0</title>
+    <link href="https://zjarci.github.io/2018/11/25/OpenOCD-SWD%E8%B0%83%E8%AF%95stm32f0/"/>
+    <id>https://zjarci.github.io/2018/11/25/OpenOCD-SWD调试stm32f0/</id>
+    <published>2018-11-25T11:08:24.000Z</published>
+    <updated>2018-11-25T11:08:52.411Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="\\images\pasted-0.png\" alt="upload successful"></p><p><img src="\\images\pasted-1.png\" alt="upload successful"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;\\images\pasted-0.png\&quot; alt=&quot;upload successful&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\\images\pasted-1.png\&quot; alt=&quot;upload successful&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>yum安装本地rpm包</title>
     <link href="https://zjarci.github.io/2018/10/28/yum%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0rpm%E5%8C%85/"/>
     <id>https://zjarci.github.io/2018/10/28/yum安装本地rpm包/</id>
-    <published>2018-10-28T03:51:02.000Z</published>
+    <published>2018-10-28T04:51:02.000Z</published>
     <updated>2018-10-28T03:51:05.720Z</updated>
     
     <content type="html"><![CDATA[<p>yum localinstall ./google-chrome-stable_current_x86_64.rpm</p>]]></content>
@@ -42,7 +65,7 @@
     <title>Untitled</title>
     <link href="https://zjarci.github.io/2018/10/18/Untitled/"/>
     <id>https://zjarci.github.io/2018/10/18/Untitled/</id>
-    <published>2018-10-18T13:27:47.000Z</published>
+    <published>2018-10-18T14:27:47.000Z</published>
     <updated>2018-10-18T14:00:37.735Z</updated>
     
     <content type="html"><![CDATA[<p><img src="\images\zjarci.jpg" alt="upload successful"></p>]]></content>
