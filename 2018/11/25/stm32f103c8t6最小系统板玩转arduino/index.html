@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2018 | zjarci blog</title>
+  <title>stm32f103c8t6最小系统板玩转arduino | zjarci blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -111,28 +111,16 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-stm32f103c8t6最小系统板玩转arduino" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-	
-    <script>
-        window.subData= { title:'year : 2018'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/25/stm32f103c8t6最小系统板玩转arduino/">
-                
-                    stm32f103c8t6最小系统板玩转arduino
-                
-            </a>
-        </h2>
+                stm32f103c8t6最小系统板玩转arduino
+            
+        </h1>
         <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-25
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-25&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
     
@@ -144,7 +132,9 @@
     </section>
 
     <section class="article typo">
-        <p>一、硬件：<br>淘宝搜索“stm32f103c8t6最小系统板”，实物如下图所示：</p>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>一、硬件：<br>淘宝搜索“stm32f103c8t6最小系统板”，实物如下图所示：</p>
 <p><img src="\images\pasted-2.png" alt="upload successful"><br>二、软件：<br>2.1、从arduino官网<a href="https://www.arduino.cc下载Arduino" target="_blank" rel="noopener">https://www.arduino.cc下载Arduino</a> IDE，我下载的是zip免安装版本，文件名：arduino-1.8.7-windows.zip；<br>2.2、从<a href="https://github.com/rogerclarkmelbourne/Arduino_STM32下载stm32的arduino硬件库，文件名：Arduino_STM32-master.zip；" target="_blank" rel="noopener">https://github.com/rogerclarkmelbourne/Arduino_STM32下载stm32的arduino硬件库，文件名：Arduino_STM32-master.zip；</a><br>2.3、从<a href="https://github.com/rogerclarkmelbourne/STM32duino-bootloader下载bootloader文件，文件名：STM32duino-bootloader-master.zip；" target="_blank" rel="noopener">https://github.com/rogerclarkmelbourne/STM32duino-bootloader下载bootloader文件，文件名：STM32duino-bootloader-master.zip；</a><br>2.4、从<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm下载GNU" target="_blank" rel="noopener">https://developer.arm.com/open-source/gnu-toolchain/gnu-rm下载GNU</a> Arm Embedded Toolchain，文件名：gcc-arm-none-eabi-7-2018-q2-update-win32.zip<br>2.5、解压以上四个压缩包；<br>2.6、把Arduino_STM32-master文件夹改名为Arduino_STM32并移动到arduino-1.8.7\hardware目录下；<br>2.7、把gcc-arm-none-eabi-7-2018-q2-update-win32移动到arduino-1.8.7\hardware\Arduino_STM32\tools目录下；<br>2.8、在arduino-1.8.7\hardware\Arduino_STM32\STM32F1\platform.txt中添加目录定义，如下两行：<br>        runtime.hardware.path=./hardware/Arduino_STM32<br>        runtime.tools.arm-none-eabi-gcc.path=./hardware/Arduino_STM32/tools/gcc-arm-none-eabi-7-2018-q2-update-win32<br>2.9、把arduino-1.8.7\hardware\Arduino_STM32\tools\gcc-arm-none-eabi-7-2018-q2-update-win32\arm-none-eabi\include\sys\cdefs.h中的宏定义<strong>always_inline改为：<br>        //#define        </strong>always_inline        <strong>inline</strong> <strong>attribute</strong>((<strong>always_inline</strong>))</p>
 <pre><code>#define        __always_inline        __attribute__((__always_inline__))
 </code></pre><p>2.10、运行arduino-1.8.7\hardware\Arduino_STM32\drivers\win\install_drivers.bat安装驱动，驱动包括Maple DFU driver和Maple Serial driver，<br>        其中Maple DFU driver用于更新程序，Maple Serial driver用于USB转串口。<br>三、操作：<br>3.1、使用串口或仿真器stlink烧录”STM32duino-bootloader-master.zip\STM32duino-bootloader-master\bootloader_only_binaries\generic_boot20_pc13.bin”文件到stm32f103c8t6最小系统板；<br>3.2、使用usb数据线直接连接stm32f103c8t6最小系统板的Micro USB接口，根据提示安装驱动；<br>3.3、运行arduino ide，文件\新建，并设置开发板，如下图所示：<br><img src="\images\pasted-3.png" alt="upload successful"><br>3.4、添加程序：</p>
@@ -155,159 +145,87 @@
 <p>void setup() {<br>    // initialize the digital pin as an output:<br>    pinMode(BOARD_LED_PIN, OUTPUT);<br>    Serial.begin(9600);<br>    xTaskCreate(vLEDFlashTask,<br>                “Task1”,<br>                configMINIMAL_STACK_SIZE,<br>                NULL,<br>                tskIDLE_PRIORITY + 2,<br>                NULL);<br>    xTaskCreate(vSerialTask,<br>                “Task2”,<br>                configMINIMAL_STACK_SIZE,<br>                NULL,<br>                tskIDLE_PRIORITY + 2,<br>                NULL);<br>    vTaskStartScheduler();<br>}</p>
 <p>void loop() {<br>    // Insert background code here<br>}<br>3.5、验证/编译并上传，运行效果如下：<br><img src="\images\pasted-4.png" alt="upload successful"></p>
 
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+            </div>
         
 
         
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/11/25/OpenOCD-SWD调试stm32f0/" rel="prev" title="OpenOCD SWD调试stm32f0">
+                                    
+                                        OpenOCD SWD调试stm32f0
+                                    
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
     </section>
+
 </article>
 
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/11/25/OpenOCD-SWD调试stm32f0/">
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
                 
-                    OpenOCD SWD调试stm32f0
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-25
-        </time>
-        
-    
-    <div class='cats'>
-        
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://zjarci.github.io/2018/11/25/OpenOCD-SWD调试stm32f0/">OpenOCD SWD调试stm32f0</a></li>
+            
+                <li><a href="https://zjarci.github.io/2018/10/28/yum安装本地rpm包/">yum安装本地rpm包</a></li>
+            
+                <li><a href="https://zjarci.github.io/2018/10/18/Untitled/">Untitled</a></li>
+            
+                <li><a href="https://zjarci.github.io/2018/10/13/hello-world/">Hello World</a></li>
+            
+        </ul>
     </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 
 
-    </section>
+            
 
-    <section class="article typo">
-        <p><img src="\images\pasted-0.png" alt="upload successful"></p>
-<p><img src="\images\pasted-1.png" alt="upload successful"></p>
+            
 
-        
-
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/28/yum安装本地rpm包/">
                 
-                    yum安装本地rpm包
+
                 
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-28
-        </time>
-        
-    
-    <div class='cats'>
-        
-    </div>
 
-
-    </section>
-
-    <section class="article typo">
-        <p>yum localinstall ./google-chrome-stable_current_x86_64.rpm</p>
-
-        
-
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/18/Untitled/">
                 
-                    Untitled
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-18
-        </time>
-        
-    
-    <div class='cats'>
-        
-    </div>
+            
+
+        </section>
+    </article>
 
 
-    </section>
-
-    <section class="article typo">
-        <p><img src="\images\zjarci.jpg" alt="upload successful"></p>
-
-        
-
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/13/hello-world/">
-                
-                    Hello World
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-13
-        </time>
-        
-    
-    <div class='cats'>
-        
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-
-        
-    </section>
-</article>
-
-        </div>
-    
-</section>
-
-
-
+<script>
+    window.subData = {
+        title: 'stm32f103c8t6最小系统板玩转arduino',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -510,6 +428,10 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
 
 
     <script>setLoadingBarProgress(100);</script>
