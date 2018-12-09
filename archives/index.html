@@ -5,8 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <title>Archives | zjarci blog</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+  
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -15,49 +14,64 @@
 
   <link rel="shortcut icon" href="" />
   <link rel="icon" href="" />
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+  
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
       document.getElementById('loading-bar').style.width=num+"%";
     }
   </script>
+  
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
 </head>
 
 <body>
     <div id="loading-bar-wrapper">
-  <div id="loading-bar"></div>
+  <div id="loading-bar" class="pure"></div>
 </div>
 
-
     <script>setLoadingBarProgress(20)</script>
-    <header class="l_header">
+    <header class="l_header pure">
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-			<a class="logo flat-box" href='/' >
-				<!-- <i class="fa fa-home"></i> -->
-				zjarci blog
-			</a>
-
+			<a class="logo flat-box" href='/' >zjarci blog</a>
 				<div class='menu'>
 					<ul class='h-list'>
-                        
-    						
-    							<li>
-    								<a class='nav-home flat-box' href='/'>
-    									<i class='fa fa-rss fa-'></i>&nbsp;博客
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-archives flat-box' href='/archives'>
-    									<i class='fa fa-archive fa-'></i>&nbsp;归档
-    								</a>
-    							</li>
-    						
-        			 
+            
+    					
+    						<li>
+									<a id="not_current"
+									 class="nav flat-box" href="/">
+										<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+									</a>
+  							</li>
+        			
+    						<li>
+									<a id="not_current"
+									 class="nav flat-box" href="/archives/">
+										<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+									</a>
+  							</li>
+        			
+        		
 					</ul>
 					<div class='underline'></div>
 				</div>
@@ -66,44 +80,47 @@
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
 						<input type="text" class="input u-search-input" placeholder="Search" />
-						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
 					</form>
 				</div>
 			
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></span></a></li>
 				
-				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
-				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
-				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fas fa-list fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 	</div>
 </header>
 	<aside class="menu-phone">
-        <div class="header">zjarci blog</div>
 		<nav>
-            <ul>
-                
-                    
-                        <li>
-                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
-                        </li>
-                    
-             
-            </ul>
+      <ul>
+          
+              
+                  <li>
+										<a class="nav  flat-box" href="/">
+											<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+										</a>
+                  </li>
+              
+                  <li>
+										<a class="nav  flat-box" href="/archives/">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+										</a>
+                  </li>
+              
+       
+      </ul>
 		</nav>
 	</aside>
 
@@ -155,28 +172,6 @@
             </a>
           </div>
       
-          <div class="archive-item archive-post mark">
-            <a href="/2018/10/18/Untitled/">
-              <time>10-18</time>
-              <span class="title">
-                
-                    Untitled
-                
-              </span>
-            </a>
-          </div>
-      
-          <div class="archive-item archive-post mark">
-            <a href="/2018/10/13/hello-world/">
-              <time>10-13</time>
-              <span class="title">
-                
-                    Hello World
-                
-              </span>
-            </a>
-          </div>
-      
     </section>
   </article>
   <!--
@@ -189,78 +184,56 @@
             
     
         
-    <section class='m_widget author'>
+  <section class='m_widget author'>
+    
+      <div class='header'>
+        <img class='avatar' src='https://zjarci.github.io/images/zjarci.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
         
-            <div class='header'>
-                <img class='avatar' src='https://zjarci.github.io/images/zjarci.jpg' />
-            </div>
+          
+            <a href="mailto:zjarci@gmail.com" class="social flat-box" target="_blank" rel="external"><i class="social fas fa-envelope" aria-hidden="true"></i></a>
+          
         
+          
+            <a href="https://github.com/zjarci" class="social flat-box" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
         
-            <div class='content'>
-                
-                    <h2>zjarci</h2>
-                
-                
-            </div>
+      </div>
+    
+  </section>
+
+
+    
+    
         
-        
-            <div class="social-wrapper">
-              
-                
-                    <a href="mailto:zjarci@gmail.com" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
-                
-              
-                
-                    <a href="https://github.com/zjarci" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-github" aria-hidden="true"></i></a>
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            </div>
-        
-    </section>
+  <section class='m_widget announcement'>
+    <header class='header pure'>
+        <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;公告</div>
+    </header>
+    <div class='content pure'>
+      本站使用 <b><a href="https://xaoxuu.com/wiki/material-x/">Material X</a></b> 作为主题，喜欢这个主题的朋友可以阅读文档进行安装哦。
+    </div>
+  </section>
 
 
     
     
         <section class='m_widget categories'>
-    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
-    <div class='content'>
+    <header class='header pure'>
+        <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    </header>
+    <div class='content pure'>
         
     </div>
 </section>
+
+    
+    
+        
 
     
     
@@ -270,27 +243,27 @@
     
     
         <section class='m_widget links'>
-    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
-    <div class='content'>
+    <header class='header pure'>
+        <div><i class="fas fa-handshake fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+        
+            <a class="rightBtn" title="联系博主添加友链" target="_blank" rel="external nofollow noopener noreferrer" href="mailto:me@xaoxuu.com?subject=交换友链&body=你好，我想和你交换友链，我已经将【zjarci blog】添加到我的博客的友链中。我的博客链接是："><i class="fas fa-plus fa-fw"></i></a>
+        
+    </header>
+    <div class='content pure'>
         <ul class="entry" id="links">
             
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/">
+                <li><a class="flat-box" title="https://github.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/">
                     <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;github
+                        
+                            <img src="https://xaoxuu.com/assets/img/avatar.jpg">
+                        
+                        &nbsp;&nbsp;GitHub
                     </div>
                 </a></li>
             
-            
-
         </ul>
-
     </div>
 </section>
-
-    
-    
-        
 
     
 
@@ -304,45 +277,11 @@
         <div class="social-wrapper">
           
               
-                  <a href="mailto:zjarci@gmail.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+                  <a href="mailto:zjarci@gmail.com" class="social fas fa-envelope flat-box" target="_blank" rel="external"></a>
               
           
               
-                  <a href="https://github.com/zjarci" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
+                  <a href="https://github.com/zjarci" class="social fab fa-github flat-box" target="_blank" rel="external"></a>
               
           
         </div>
@@ -350,7 +289,7 @@
     <br>
     <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
     <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
-		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
     </div>
 </footer>
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
@@ -384,6 +323,113 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+  function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function () {
+      entries.push( $(this).attr("id").trim() );
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+      .done(function (results) {
+        var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+        if (results.length === 0) {
+          $visitors.find(COUNT_CONTAINER_REF).text(0);
+          return;
+        }
+
+        for (var i = 0; i < results.length; i++) {
+          var item = results[i];
+          var url = item.get('url');
+          var time = item.get('time');
+          var element = document.getElementById(url);
+
+          $(element).find(COUNT_CONTAINER_REF).text(time);
+        }
+        for(var i = 0; i < entries.length; i++) {
+          var url = entries[i];
+          var element = document.getElementById(url);
+          var countSpan = $(element).find(COUNT_CONTAINER_REF);
+          if( countSpan.text() == '') {
+            countSpan.text(0);
+          }
+        }
+      })
+      .fail(function (object, error) {
+        console.log("Error: " + error.code + " " + error.message);
+      });
+  }
+
+  function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+      success: function(results) {
+        if (results.length > 0) {
+          var counter = results[0];
+          counter.fetchWhenSave(true);
+          counter.increment("time");
+          counter.save(null, {
+            success: function(counter) {
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            },
+            error: function(counter, error) {
+              console.log('Failed to save Visitor num, with error message: ' + error.message);
+            }
+          });
+        } else {
+          var newcounter = new Counter();
+          /* Set ACL */
+          var acl = new AV.ACL();
+          acl.setPublicReadAccess(true);
+          acl.setPublicWriteAccess(true);
+          newcounter.setACL(acl);
+          /* End Set ACL */
+          newcounter.set("title", title);
+          newcounter.set("url", url);
+          newcounter.set("time", 1);
+          newcounter.save(null, {
+            success: function(newcounter) {
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+            },
+            error: function(newcounter, error) {
+              console.log('Failed to create');
+            }
+          });
+        }
+      },
+      error: function(error) {
+        console.log('Error:' + error.code + " " + error.message);
+      }
+    });
+  }
+
+  $(function() {
+    var Counter = AV.Object.extend("Counter");
+    if ($('.leancloud_visitors').length == 1) {
+      addCount(Counter);
+    } else if ($('.post-title-link').length > 1) {
+      showTime(Counter);
+    }
+  });
+</script>
 
 
     <script>setLoadingBarProgress(100);</script>

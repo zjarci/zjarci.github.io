@@ -5,8 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <title>zjarci blog</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+  
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
@@ -15,49 +14,64 @@
 
   <link rel="shortcut icon" href="" />
   <link rel="icon" href="" />
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+  
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
       document.getElementById('loading-bar').style.width=num+"%";
     }
   </script>
+  
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
 </head>
 
 <body>
     <div id="loading-bar-wrapper">
-  <div id="loading-bar"></div>
+  <div id="loading-bar" class="pure"></div>
 </div>
 
-
     <script>setLoadingBarProgress(20)</script>
-    <header class="l_header">
+    <header class="l_header pure">
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-			<a class="logo flat-box" href='/' >
-				<!-- <i class="fa fa-home"></i> -->
-				zjarci blog
-			</a>
-
+			<a class="logo flat-box" href='/' >zjarci blog</a>
 				<div class='menu'>
 					<ul class='h-list'>
-                        
-    						
-    							<li>
-    								<a class='nav-home flat-box' href='/'>
-    									<i class='fa fa-rss fa-'></i>&nbsp;博客
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-archives flat-box' href='/archives'>
-    									<i class='fa fa-archive fa-'></i>&nbsp;归档
-    								</a>
-    							</li>
-    						
-        			 
+            
+    					
+    						<li>
+									<a id="not_current"
+									 class="nav flat-box" href="/">
+										<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+									</a>
+  							</li>
+        			
+    						<li>
+									<a id="not_current"
+									 class="nav flat-box" href="/archives/">
+										<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+									</a>
+  							</li>
+        			
+        		
 					</ul>
 					<div class='underline'></div>
 				</div>
@@ -66,44 +80,47 @@
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
 						<input type="text" class="input u-search-input" placeholder="Search" />
-						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
 					</form>
 				</div>
 			
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></span></a></li>
 				
-				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
-				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
-				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fas fa-list fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 	</div>
 </header>
 	<aside class="menu-phone">
-        <div class="header">zjarci blog</div>
 		<nav>
-            <ul>
-                
-                    
-                        <li>
-                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
-                        </li>
-                    
-             
-            </ul>
+      <ul>
+          
+              
+                  <li>
+										<a class="nav  flat-box" href="/">
+											<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+										</a>
+                  </li>
+              
+                  <li>
+										<a class="nav  flat-box" href="/archives/">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+										</a>
+                  </li>
+              
+       
+      </ul>
 		</nav>
 	</aside>
 
@@ -115,7 +132,6 @@
 
 <section class="post-list">
     
-    
         <div class='post-wrapper'>
             <article class="post reveal ">
     <section class="meta">
@@ -126,30 +142,23 @@
                 
             </a>
         </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-25
+        <time class="time">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2018-11-25
         </time>
         
-    
-    <div class='cats'>
-        
-    </div>
-
 
     </section>
 
     <section class="article typo">
         <p>一、硬件：<br>淘宝搜索“stm32f103c8t6最小系统板”，实物如下图所示：</p>
-<p><img src="\images\pasted-2.png" alt="upload successful"><br>二、软件：<br>2.1、从arduino官网<a href="https://www.arduino.cc" target="_blank" rel="noopener">https://www.arduino.cc</a> 下载Arduino IDE，我下载的是zip免安装版本，文件名：arduino-1.8.7-windows.zip；<br>2.2、从<a href="https://github.com/rogerclarkmelbourne/Arduino_STM32" target="_blank" rel="noopener">https://github.com/rogerclarkmelbourne/Arduino_STM32</a> 下载stm32的arduino硬件库，文件名：Arduino_STM32-master.zip；<br>2.3、从<a href="https://github.com/rogerclarkmelbourne/STM32duino-bootloader" target="_blank" rel="noopener">https://github.com/rogerclarkmelbourne/STM32duino-bootloader</a> 下载bootloader文件，文件名：STM32duino-bootloader-master.zip；<br>2.4、从<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm" target="_blank" rel="noopener">https://developer.arm.com/open-source/gnu-toolchain/gnu-rm</a> 下载GNU Arm Embedded Toolchain，文件名：gcc-arm-none-eabi-7-2018-q2-update-win32.zip<br>2.5、解压以上四个压缩包；<br>2.6、把Arduino_STM32-master文件夹改名为Arduino_STM32并移动到arduino-1.8.7\hardware目录下；<br>2.7、把gcc-arm-none-eabi-7-2018-q2-update-win32移动到arduino-1.8.7\hardware\Arduino_STM32\tools目录下；<br>2.8、在arduino-1.8.7\hardware\Arduino_STM32\STM32F1\platform.txt中添加目录定义，如下两行：<br>        runtime.hardware.path=./hardware/Arduino_STM32<br>        runtime.tools.arm-none-eabi-gcc.path=./hardware/Arduino_STM32/tools/gcc-arm-none-eabi-7-2018-q2-update-win32<br>2.9、把arduino-1.8.7\hardware\Arduino_STM32\tools\gcc-arm-none-eabi-7-2018-q2-update-win32\arm-none-eabi\include\sys\cdefs.h中的宏定义<strong>always_inline改为：<br>        //#define        </strong>always_inline        <strong>inline</strong> <strong>attribute</strong>((<strong>always_inline</strong>))</p>
-<pre><code>#define        __always_inline        __attribute__((__always_inline__))
-</code></pre><p>2.10、运行arduino-1.8.7\hardware\Arduino_STM32\drivers\win\install_drivers.bat安装驱动，驱动包括Maple DFU driver和Maple Serial driver，<br>        其中Maple DFU driver用于更新程序，Maple Serial driver用于USB转串口。<br>三、操作：<br>3.1、使用串口或仿真器stlink烧录”STM32duino-bootloader-master.zip\STM32duino-bootloader-master\bootloader_only_binaries\generic_boot20_pc13.bin”文件到stm32f103c8t6最小系统板；<br>3.2、使用usb数据线直接连接stm32f103c8t6最小系统板的Micro USB接口，根据提示安装驱动；<br>3.3、运行arduino ide，文件\新建，并设置开发板，如下图所示：<br><img src="\images\pasted-3.png" alt="upload successful"><br>3.4、添加程序：</p>
-<p>#include &lt;MapleFreeRTOS900.h&gt;</p>
-<p>#define BOARD_LED_PIN PC13</p>
-<p>static void vLEDFlashTask(void *pvParameters) {<br>    for (;;) {<br>        vTaskDelay(500);<br>        digitalWrite(BOARD_LED_PIN, HIGH);<br>        vTaskDelay(500);<br>        digitalWrite(BOARD_LED_PIN, LOW);<br>    }<br>}</p>
-<p>static void vSerialTask(void *pvParameters) {<br>    for (;;) {<br>        Serial.println(“LED OFF”);<br>        while(!(digitalRead(BOARD_LED_PIN)));<br>        Serial.println(“LED ON”);<br>        while((digitalRead(BOARD_LED_PIN)));<br>    }<br>}</p>
-<p>void setup() {<br>    // initialize the digital pin as an output:<br>    pinMode(BOARD_LED_PIN, OUTPUT);<br>    Serial.begin(9600);<br>    xTaskCreate(vLEDFlashTask,<br>                “Task1”,<br>                configMINIMAL_STACK_SIZE,<br>                NULL,<br>                tskIDLE_PRIORITY + 2,<br>                NULL);<br>    xTaskCreate(vSerialTask,<br>                “Task2”,<br>                configMINIMAL_STACK_SIZE,<br>                NULL,<br>                tskIDLE_PRIORITY + 2,<br>                NULL);<br>    vTaskStartScheduler();<br>}</p>
-<p>void loop() {<br>    // Insert background code here<br>}<br>3.5、验证/编译并上传，运行效果如下：<br><img src="\images\pasted-4.png" alt="upload successful"></p>
-
+<p><img src="\images\pasted-2.png" alt="upload successful"><br>
+        
+            <div class="readmore">
+                <a href="/2018/11/25/stm32f103c8t6最小系统板玩转arduino/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
         
 
         
@@ -168,22 +177,22 @@
                 
             </a>
         </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-25
+        <time class="time">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2018-11-25
         </time>
         
-    
-    <div class='cats'>
-        
-    </div>
-
 
     </section>
 
     <section class="article typo">
-        <p><img src="\images\pasted-0.png" alt="upload successful"></p>
-<p><img src="\images\pasted-1.png" alt="upload successful"></p>
-
+        <p><img src="\images\pasted-0.png" alt="upload successful"><br>
+        
+            <div class="readmore">
+                <a href="/2018/11/25/OpenOCD-SWD调试stm32f0/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
         
 
         
@@ -202,94 +211,15 @@
                 
             </a>
         </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-28
+        <time class="time">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2018-10-28
         </time>
         
-    
-    <div class='cats'>
-        
-    </div>
-
 
     </section>
 
     <section class="article typo">
         <p>yum localinstall ./google-chrome-stable_current_x86_64.rpm</p>
-
-        
-
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/18/Untitled/">
-                
-                    Untitled
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-18
-        </time>
-        
-    
-    <div class='cats'>
-        
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p><img src="\images\zjarci.jpg" alt="upload successful"></p>
-
-        
-
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/13/hello-world/">
-                
-                    Hello World
-                
-            </a>
-        </h2>
-        <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-10-13
-        </time>
-        
-    
-    <div class='cats'>
-        
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
         
 
@@ -308,78 +238,56 @@
             
     
         
-    <section class='m_widget author'>
+  <section class='m_widget author'>
+    
+      <div class='header'>
+        <img class='avatar' src='https://zjarci.github.io/images/zjarci.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
         
-            <div class='header'>
-                <img class='avatar' src='https://zjarci.github.io/images/zjarci.jpg' />
-            </div>
+          
+            <a href="mailto:zjarci@gmail.com" class="social flat-box" target="_blank" rel="external"><i class="social fas fa-envelope" aria-hidden="true"></i></a>
+          
         
+          
+            <a href="https://github.com/zjarci" class="social flat-box" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
         
-            <div class='content'>
-                
-                    <h2>zjarci</h2>
-                
-                
-            </div>
+      </div>
+    
+  </section>
+
+
+    
+    
         
-        
-            <div class="social-wrapper">
-              
-                
-                    <a href="mailto:zjarci@gmail.com" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
-                
-              
-                
-                    <a href="https://github.com/zjarci" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-github" aria-hidden="true"></i></a>
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            </div>
-        
-    </section>
+  <section class='m_widget announcement'>
+    <header class='header pure'>
+        <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;公告</div>
+    </header>
+    <div class='content pure'>
+      本站使用 <b><a href="https://xaoxuu.com/wiki/material-x/">Material X</a></b> 作为主题，喜欢这个主题的朋友可以阅读文档进行安装哦。
+    </div>
+  </section>
 
 
     
     
         <section class='m_widget categories'>
-    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
-    <div class='content'>
+    <header class='header pure'>
+        <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    </header>
+    <div class='content pure'>
         
     </div>
 </section>
+
+    
+    
+        
 
     
     
@@ -389,27 +297,27 @@
     
     
         <section class='m_widget links'>
-    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
-    <div class='content'>
+    <header class='header pure'>
+        <div><i class="fas fa-handshake fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+        
+            <a class="rightBtn" title="联系博主添加友链" target="_blank" rel="external nofollow noopener noreferrer" href="mailto:me@xaoxuu.com?subject=交换友链&body=你好，我想和你交换友链，我已经将【zjarci blog】添加到我的博客的友链中。我的博客链接是："><i class="fas fa-plus fa-fw"></i></a>
+        
+    </header>
+    <div class='content pure'>
         <ul class="entry" id="links">
             
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/">
+                <li><a class="flat-box" title="https://github.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/">
                     <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;github
+                        
+                            <img src="https://xaoxuu.com/assets/img/avatar.jpg">
+                        
+                        &nbsp;&nbsp;GitHub
                     </div>
                 </a></li>
             
-            
-
         </ul>
-
     </div>
 </section>
-
-    
-    
-        
 
     
 
@@ -423,45 +331,11 @@
         <div class="social-wrapper">
           
               
-                  <a href="mailto:zjarci@gmail.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+                  <a href="mailto:zjarci@gmail.com" class="social fas fa-envelope flat-box" target="_blank" rel="external"></a>
               
           
               
-                  <a href="https://github.com/zjarci" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
-              
-          
+                  <a href="https://github.com/zjarci" class="social fab fa-github flat-box" target="_blank" rel="external"></a>
               
           
         </div>
@@ -469,7 +343,7 @@
     <br>
     <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
     <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
-		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
     </div>
 </footer>
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
@@ -503,6 +377,113 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+  function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function () {
+      entries.push( $(this).attr("id").trim() );
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+      .done(function (results) {
+        var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+        if (results.length === 0) {
+          $visitors.find(COUNT_CONTAINER_REF).text(0);
+          return;
+        }
+
+        for (var i = 0; i < results.length; i++) {
+          var item = results[i];
+          var url = item.get('url');
+          var time = item.get('time');
+          var element = document.getElementById(url);
+
+          $(element).find(COUNT_CONTAINER_REF).text(time);
+        }
+        for(var i = 0; i < entries.length; i++) {
+          var url = entries[i];
+          var element = document.getElementById(url);
+          var countSpan = $(element).find(COUNT_CONTAINER_REF);
+          if( countSpan.text() == '') {
+            countSpan.text(0);
+          }
+        }
+      })
+      .fail(function (object, error) {
+        console.log("Error: " + error.code + " " + error.message);
+      });
+  }
+
+  function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+      success: function(results) {
+        if (results.length > 0) {
+          var counter = results[0];
+          counter.fetchWhenSave(true);
+          counter.increment("time");
+          counter.save(null, {
+            success: function(counter) {
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            },
+            error: function(counter, error) {
+              console.log('Failed to save Visitor num, with error message: ' + error.message);
+            }
+          });
+        } else {
+          var newcounter = new Counter();
+          /* Set ACL */
+          var acl = new AV.ACL();
+          acl.setPublicReadAccess(true);
+          acl.setPublicWriteAccess(true);
+          newcounter.setACL(acl);
+          /* End Set ACL */
+          newcounter.set("title", title);
+          newcounter.set("url", url);
+          newcounter.set("time", 1);
+          newcounter.save(null, {
+            success: function(newcounter) {
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+            },
+            error: function(newcounter, error) {
+              console.log('Failed to create');
+            }
+          });
+        }
+      },
+      error: function(error) {
+        console.log('Error:' + error.code + " " + error.message);
+      }
+    });
+  }
+
+  $(function() {
+    var Counter = AV.Object.extend("Counter");
+    if ($('.leancloud_visitors').length == 1) {
+      addCount(Counter);
+    } else if ($('.post-title-link').length > 1) {
+      showTime(Counter);
+    }
+  });
+</script>
 
 
     <script>setLoadingBarProgress(100);</script>
