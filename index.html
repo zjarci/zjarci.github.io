@@ -136,6 +136,36 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/12/21/how-can-i-get-the-source-code-path-file-names-from-an-ELF-file-compired-with-g/">
+                
+                    how can i get the source code path &amp;&amp; file names from an ELF file(compired with -g)?
+                
+            </a>
+        </h2>
+        <time class="time">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2018-12-21
+        </time>
+        
+
+    </section>
+
+    <section class="article typo">
+        <p><a href="https://stackoverflow.com/questions/31333337/how-can-i-get-the-source-code-path-file-names-from-an-elf-filecompired-with" target="_blank" rel="noopener">https://stackoverflow.com/questions/31333337/how-can-i-get-the-source-code-path-file-names-from-an-elf-filecompired-with</a></p>
+<p>readelf holds the key, but you don’t want to dump strings willy-nilly. Use the -wi option to properly format the info.<br>For example, create a shell script thus:</p>
+<p>readelf -wi $1 | grep -B1 DW_AT_comp_dir | \<br>    awk ‘/DW_AT_name/{name = $NF; getline; print $NF”/“name}’<br>which further summarizes the output of readelf -wi.</p>
+
+        
+
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2018/11/25/stm32f103c8t6最小系统板玩转arduino/">
                 
                     stm32f103c8t6最小系统板玩转arduino

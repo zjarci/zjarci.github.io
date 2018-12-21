@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>yum安装本地rpm包 | zjarci blog</title>
+  <title>how can i get the source code path &amp;&amp; file names from an ELF file(compired with -g)? | zjarci blog</title>
   
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -128,14 +128,14 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            <article id="post-yum安装本地rpm包" class="post white-box article-type-post" itemscope itemprop="blogPost">
+            <article id="post-how-can-i-get-the-source-code-path-file-names-from-an-ELF-file-compired-with-g" class="post white-box article-type-post" itemscope itemprop="blogPost">
     <section class='meta'>
         
-            <h1 class="title">yum安装本地rpm包</h1>
+            <h1 class="title">how can i get the source code path &amp;&amp; file names from an ELF file(compired with -g)?</h1>
         
         <time class="time">
             <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-            2018-10-28
+            2018-12-21
         </time>
         
           <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
@@ -150,14 +150,16 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <p>yum localinstall ./google-chrome-stable_current_x86_64.rpm</p>
+            <p><a href="https://stackoverflow.com/questions/31333337/how-can-i-get-the-source-code-path-file-names-from-an-elf-filecompired-with" target="_blank" rel="noopener">https://stackoverflow.com/questions/31333337/how-can-i-get-the-source-code-path-file-names-from-an-elf-filecompired-with</a></p>
+<p>readelf holds the key, but you don’t want to dump strings willy-nilly. Use the -wi option to properly format the info.<br>For example, create a shell script thus:</p>
+<p>readelf -wi $1 | grep -B1 DW_AT_comp_dir | \<br>    awk ‘/DW_AT_name/{name = $NF; getline; print $NF”/“name}’<br>which further summarizes the output of readelf -wi.</p>
 
         </div>
 
         <section class='meta'>
-            <time class="time" itemprop="dateUpdated" datetime="2018-10-28T11:51:05+08:00" content="2018-10-28">
+            <time class="time" itemprop="dateUpdated" datetime="2018-12-21T20:41:33+08:00" content="2018-12-21">
                 <i class="fas fa-pen fa-fw" aria-hidden="true"></i>
-                本文最后更新于：2018-10-28
+                本文最后更新于：2018-12-21
             </time>
             
         </section>
@@ -165,20 +167,20 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/11/25/OpenOCD-SWD调试stm32f0/" rel="prev" title="OpenOCD SWD调试stm32f0">
-                                  
-                                      OpenOCD SWD调试stm32f0
-                                  
+                                <a href="/2018/11/25/stm32f103c8t6最小系统板玩转arduino/" rel="prev" title="stm32f103c8t6最小系统板玩转arduino">
+                                    
+                                        stm32f103c8t6最小系统板玩转arduino
+                                    
                                 </a>
                             </h4>
                             
                         </span>
                     </section>
-                
                 
             </div>
         
@@ -201,11 +203,11 @@
         <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
-                <li><a href="https://zjarci.github.io/2018/12/21/how-can-i-get-the-source-code-path-file-names-from-an-ELF-file-compired-with-g/">how can i get the source code path &amp;&amp; file names from an ELF file(compired with -g)?</a></li>
-            
                 <li><a href="https://zjarci.github.io/2018/11/25/stm32f103c8t6最小系统板玩转arduino/">stm32f103c8t6最小系统板玩转arduino</a></li>
             
                 <li><a href="https://zjarci.github.io/2018/11/25/OpenOCD-SWD调试stm32f0/">OpenOCD SWD调试stm32f0</a></li>
+            
+                <li><a href="https://zjarci.github.io/2018/10/28/yum安装本地rpm包/">yum安装本地rpm包</a></li>
             
         </ul>
     </div>
@@ -228,7 +230,7 @@
 
 <script>
     window.subData = {
-        title: 'yum安装本地rpm包',
+        title: 'how can i get the source code path &amp;&amp; file names from an ELF file(compired with -g)?',
         tools: true
     }
 </script>
